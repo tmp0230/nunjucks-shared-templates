@@ -1,5 +1,5 @@
 {
-  "name": "nunjucks example todo app",
+  "name": "nunjucks_example_app",
   "description": "shows how to share templates between server and client",
   "version": "0.0.1",
   "private": true,
