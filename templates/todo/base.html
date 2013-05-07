@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link href="/static/css/todo.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="container todoapp">
+        <a href="/api/todo" class="btn btn-small add-todo-list"><i class="icon-plus icon"> </i> Add Another List</a>
+        <div class="todoapp-container">
+        {% block todoapp %}
+
+        {% endblock %}
+        </div>
+        <footer class="info">
+            <p>Double-click to edit a todo</p>
+        </footer>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/todos.js"></script>
+{% endblock %}

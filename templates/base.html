@@ -1,0 +1,40 @@
+{% import 'macros.html' as h %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nunjucks Template Sharing Example App</title>
+
+        <link href="/static/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="/static/css/default.min.css" rel="stylesheet">
+        {% block styles %}{% endblock %}
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script type="text/javascript">
+            var X = {};
+        </script>
+    </head>
+    <body data-spy="scroll" data-target=".subnav" >
+
+
+        {% set flashes = flash() %}
+
+        <div class="container flash-container">
+            {{ h.flash(flashes) }}
+        </div>
+
+
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
+        <script src="/static/js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="/static/js/vendor/bootstrap.min.js"></script>
+        <script src="/static/js/vendor/underscore.min.js"></script>
+        <script src="/static/js/vendor/jquery.scrollToFixed.js"></script>
+        <script src="/static/js/vendor/nunjucks-dev.js"></script>
+        <script src="/static/js/vendor/behavior.js"></script>
+        <script src="/static/js/default.js"></script>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

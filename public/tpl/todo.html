@@ -1,0 +1,34 @@
+{% macro todoItem(item) %}
+<form data-id='{{ item.id }}' autocomplete="off">
+<div class="todo {% if item.done %}done{% endif %}">
+    <div class="display">
+        <input class="check" value="true" name='done' type="checkbox" {% if item.done %}checked="checked"{% endif %} />
+
+        <div class="todo-text" ><span class='value'>{{ item.desc }}</span> <button class="btn btn-small btn-danger pull-right delete-item"><i class="icon icon-thumbs-down"></i> Delete</button></div>
+    </div>
+    <div class="edit hide">
+        <input type="hidden" value="{{ item.id }}" name='id'  />
+        <input type="text" value="{{ item.desc }}" name='desc'  class="todo-input"/>
+    </div>
+</div>
+</form>
+{% endmacro %}
+
+{% macro todoList(todo) %}
+<section class="todo-list" data-id="{{ todo.id }}">
+    <header class="todo-header">
+        <h1>Todo List #{{ todo.id }}</h1>
+        <input class="new-todo" placeholder="What needs to be done?" autofocus>
+    </header>
+    <section class="main">
+        <div class="todo-list">
+            {% for item in todo.items %}
+                {{ todoItem(item) }}
+            {% endfor %}
+        </div>
+    </section>
+    <footer class="footer">
+        <span class="todo-count"></span>
+    </footer>
+</section>
+{% endmacro %}
