@@ -1,4 +1,3 @@
-async = require('async')
 _ = require('underscore')
 templating = require('../config/templating')
 api = require('../api/todoConnector')
