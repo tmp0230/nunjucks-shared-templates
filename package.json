@@ -9,6 +9,7 @@
     "less-middleware": "*",
     "connect-flash": "*",
     "connect-coffee-script": "*",
-    "underscore": "~1.4.4"
+    "underscore": "~1.4.4",
+    "async": "~0.2.9"
   }
 }
