@@ -1,7 +1,7 @@
 #this is a dummy backend api.
 #it will randomly throw errors
 
-ERROR_RATE = 0.3
+ERROR_RATE = 0.0
 
 exports.getTodos = (cb) ->
   process.nextTick () ->
